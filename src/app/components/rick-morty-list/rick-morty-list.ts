@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RickYMortyService } from '../../services/rick-ymorty-service';
+import { IPersonajes } from '../../interfaces/ipersonajes';
 
 @Component({
   selector: 'app-rick-morty-list',
@@ -10,6 +11,7 @@ import { RickYMortyService } from '../../services/rick-ymorty-service';
 export class RickMortyList implements OnInit{
 
     private _rickMortyService: RickYMortyService = inject(RickYMortyService);
+    private personajes: Array<IPersonajes> = [];
     
     
     ngOnInit(): void{
@@ -17,7 +19,12 @@ export class RickMortyList implements OnInit{
     }
     
     devuelveMetodoDeInstancia(): void {
-        this._rickMortyService.elMetodo();
+        this._rickMortyService.getPersonajes();
+        setTimeout(() => {
+            this.personajes = this._rickMortyService.personajes;
+            console.log(this.personajes);
+        }, 3000)
+
     }
     
 }
