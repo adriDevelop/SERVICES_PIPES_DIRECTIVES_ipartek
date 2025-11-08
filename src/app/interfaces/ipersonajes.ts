@@ -1,7 +1,8 @@
+import { ArrayPersonajes } from './array-personajes';
+
 export interface IPersonajes {
-    id: number,
-    image: string,
-    name: string,
-    status: string,
-    species: string,
+    data: {
+        results: Array<ArrayPersonajes>
+    }
+    
 }

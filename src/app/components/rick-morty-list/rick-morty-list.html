@@ -1,1 +1,13 @@
-<button type="button" class="btn btn-danger" (click)="devuelveMetodoDeInstancia()">Púlsame para ver mensaje en consola</button>
+<section class="search-bar">
+    <app-search-bar-component></app-search-bar-component>
+</section>
+<section>
+    <div class="titulo">
+        <h1>Resultado de la búsqueda</h1>
+    </div>
+</section>
+<section class="result-container">
+    @for (p of personajes; track p.id) {
+        <app-personaje-component [personaje]="p"></app-personaje-component>
+    }
+</section>

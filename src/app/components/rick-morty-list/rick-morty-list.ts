@@ -1,17 +1,19 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RickYMortyService } from '../../services/rick-ymorty-service';
-import { IPersonajes } from '../../interfaces/ipersonajes';
+import { ArrayPersonajes } from '../../interfaces/array-personajes';
+import { PersonajeComponent } from '../personaje-component/personaje-component';
+import { SearchBarComponent } from "../search-bar-component/search-bar-component";
 
 @Component({
   selector: 'app-rick-morty-list',
-  imports: [],
+  imports: [PersonajeComponent, SearchBarComponent],
   templateUrl: './rick-morty-list.html',
   styleUrl: './rick-morty-list.css',
 })
 export class RickMortyList implements OnInit{
 
     private _rickMortyService: RickYMortyService = inject(RickYMortyService);
-    private personajes: Array<IPersonajes> = [];
+    personajes: Array<ArrayPersonajes> = [];
     
     
     ngOnInit(): void{
@@ -19,12 +21,23 @@ export class RickMortyList implements OnInit{
     }
     
     devuelveMetodoDeInstancia(): void {
-        this._rickMortyService.getPersonajes();
-        setTimeout(() => {
-            this.personajes = this._rickMortyService.personajes;
-            console.log(this.personajes);
-        }, 3000)
-
+       this._rickMortyService.getPersonajes().subscribe({
+        next: (data: any) => {
+            data.results.forEach((personaje: any) => {
+                this.personajes.push(this._rickMortyService.mapeadorPersonajes(personaje));
+                console.log(personaje);
+            });
+        }
+       });
     }
     
+    devuelvePersonajesPorNombre(nombre: string): void {
+        this._rickMortyService.getPersonajesPorNombre(nombre).subscribe({
+            next: (data:any) => {
+                data.results.forEach((personaje: any) => {
+                    this.personajes.push(this._rickMortyService.mapeadorPersonajes(personaje));
+                });
+            }
+        })
+    }
 }

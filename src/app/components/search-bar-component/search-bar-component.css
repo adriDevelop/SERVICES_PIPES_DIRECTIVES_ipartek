@@ -1,0 +1,19 @@
+.search-container{
+    display: flex;
+    height: 5rem;
+    width: 100vw;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+    padding-left:7rem;
+    padding-right: 7rem;
+    background-color: gray;
+}
+
+input{
+    width: 65%;
+}
+
+.btn {
+    width: 10%;
+}

@@ -1,0 +1,22 @@
+.search-bar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-size:larger;
+    margin: 2rem;
+}
+
+.result-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
