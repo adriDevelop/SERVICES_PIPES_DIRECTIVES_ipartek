@@ -23,7 +23,8 @@ export class RickYMortyService {
             id: p.id,
             image: p.image,
             name: p.name,
-            status: p.image,
+            genero: p.gender,
+            status: p.status,
             species: p.especies
         }
     }

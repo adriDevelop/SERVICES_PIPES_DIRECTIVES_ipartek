@@ -3,10 +3,11 @@ import { RickYMortyService } from '../../services/rick-ymorty-service';
 import { ArrayPersonajes } from '../../interfaces/array-personajes';
 import { PersonajeComponent } from '../personaje-component/personaje-component';
 import { SearchBarComponent } from "../search-bar-component/search-bar-component";
+import { SeccionGuitarras } from "../seccion-guitarras/seccion-guitarras";
 
 @Component({
   selector: 'app-rick-morty-list',
-  imports: [PersonajeComponent, SearchBarComponent],
+  imports: [PersonajeComponent, SearchBarComponent, SeccionGuitarras],
   templateUrl: './rick-morty-list.html',
   styleUrl: './rick-morty-list.css',
 })

@@ -6,13 +6,18 @@
     justify-content: center;
     border-radius: 2rem;
     background-color: #dddddd;
-    margin: 1rem;
+    margin: 0.5rem;
     padding: 1rem;
 }
 
 .img-container img{
     height: 15rem;
     border-radius: 2rem;
+    width: 100%;
+}
+
+img{
+    width: 100%;
 }
 
 .name-character h3{

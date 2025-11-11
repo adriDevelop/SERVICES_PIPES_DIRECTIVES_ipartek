@@ -1,0 +1,31 @@
+<section class="guitarras">
+    @for (instrumento of aGuitarras; track instrumento.id) {
+        <div class="container-instrumento">
+            <div class="container-imagen">
+                <img src="img/{{instrumento.urlImage}}">
+            </div>
+            <div class="datos-instrumentos">
+                <div class="descripcion">
+                    <span>{{instrumento.fabricante}}</span><span>{{instrumento.modelo}}</span>
+                    <ul>
+                        @for (descripcion of instrumento.descripcion; track $index){
+                            <li>{{descripcion}}</li>
+                        } 
+                    </ul>
+                </div>
+                <div class="stock">
+                    <h1>Stock {{instrumento.stock}} unidades</h1>
+                </div>
+                
+            </div>
+            <div class="datos-precio-iconos">
+                <h1>Precio {{instrumento.precio}} €</h1>
+                <div class="iconos">
+                    <i class="fa-regular fa-paste"></i>
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+            </div>
+    </div>
+    }
+</section>

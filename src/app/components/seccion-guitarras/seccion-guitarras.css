@@ -1,0 +1,31 @@
+.guitarras{
+    display: flex;
+    flex-direction: column;
+}
+
+.container-instrumento{
+    display: flex;
+    flex-direction: vertical;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    background-color: rgb(248, 245, 245);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.datos-instrumentos{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.datos-precio-iconos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-imagen img{
+    border-radius: 1rem;
+}
