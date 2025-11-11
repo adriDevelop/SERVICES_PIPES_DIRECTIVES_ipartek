@@ -1,6 +1,7 @@
 .guitarras{
     display: flex;
     flex-direction: column;
+    width: 40rem;
 }
 
 .container-instrumento{
@@ -13,19 +14,78 @@
     border-radius: 0.5rem;
 }
 
+.caracteristicas-principales{
+    margin-top: 10px;
+}
+
+.caracteristicas-principales li{
+    margin-bottom: 8px;
+}
+
+.caracteristicas-principales li:before{
+    font-family: "FontAwesome";
+    font-size: 18px;
+    content: "\F192";
+    padding-right: 12px;
+    vertical-align: center;
+}
+
+.numero-likes{
+    color: #8a8a8a;
+    font-weight: bold;
+}
+
+.contenedor-likes {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.descripcion{
+    display: flex;
+    flex-direction: column;
+}
+
 .datos-instrumentos{
+    width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
+.spans-container .fabricante{
+    font-weight: bold;
+}
+
 .datos-precio-iconos{
+    width: 15%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
 }
 
+.datos-precio-iconos h1{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.iconos{
+    display: flex;
+    justify-content: space-between;
+}
+
+.iconos i{
+    font-size: 1.5rem;
+}
+
+.container-imagen{
+    width: 25%;
+}
 .container-imagen img{
+    width: 168px;
     border-radius: 1rem;
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
 }

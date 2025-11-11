@@ -6,12 +6,19 @@
             </div>
             <div class="datos-instrumentos">
                 <div class="descripcion">
-                    <span>{{instrumento.fabricante}}</span><span>{{instrumento.modelo}}</span>
-                    <ul>
-                        @for (descripcion of instrumento.descripcion; track $index){
-                            <li>{{descripcion}}</li>
-                        } 
-                    </ul>
+                    <div class="spans-container">
+                        <span class="fabricante">{{instrumento.fabricante}} </span><span class="modelo">{{instrumento.modelo}}</span>
+                    </div>
+                    <div class="contenedor-likes">
+                        <span class="numero-likes">{{instrumento.likes}}</span>
+                    </div>
+
+                        <ul class="caracteristicas-principales">
+                            @for (descripcion of instrumento.descripcion; track $index){
+                                <li>{{descripcion}}</li>
+                            } 
+                        </ul>
+ 
                 </div>
                 <div class="stock">
                     <h1>Stock {{instrumento.stock}} unidades</h1>
@@ -19,7 +26,7 @@
                 
             </div>
             <div class="datos-precio-iconos">
-                <h1>Precio {{instrumento.precio}} €</h1>
+                <h1>{{instrumento.precio}} €</h1>
                 <div class="iconos">
                     <i class="fa-regular fa-paste"></i>
                     <i class="fa-regular fa-heart"></i>
