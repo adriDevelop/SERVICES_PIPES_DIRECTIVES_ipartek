@@ -8,7 +8,8 @@ export class Instrumentos {
         public descripcion: Array<string>,
         public stock: number,
         public likes: number,
-        public urlImage: string
+        public urlImage: string,
+        public agregadoAlCarrito: boolean,
     ){}
 
     

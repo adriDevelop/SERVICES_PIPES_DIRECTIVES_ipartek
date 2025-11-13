@@ -89,3 +89,26 @@
     filter: brightness(1.1);
     mix-blend-mode: multiply;
 }
+
+.rojo{
+    color: red;
+}
+
+.amarillo{
+    color: orange;
+}
+
+.verde{
+    color: green;
+}
+
+i{
+    cursor: pointer;
+}
+i:hover{
+    color: purple;
+}
+
+i.fa-solid.fa-heart{
+    color: purple;
+}

@@ -2,7 +2,7 @@
     @for (instrumento of aGuitarras; track instrumento.id) {
         <div class="container-instrumento">
             <div class="container-imagen">
-                <img src="img/{{instrumento.urlImage}}">
+                <img appImageDirective src="img/{{instrumento.urlImage}}">
             </div>
             <div class="datos-instrumentos">
                 <div class="descripcion">
@@ -21,15 +21,23 @@
  
                 </div>
                 <div class="stock">
-                    <h1>Stock {{instrumento.stock}} unidades</h1>
+                    <h1 [ngClass] = "{
+                    'rojo': instrumento.stock <= 0,
+                    'amarillo': instrumento.stock == 3,
+                    'verde': instrumento.stock > 3
+                }">{{ instrumento.stock | stockPipe}}</h1>
                 </div>
                 
             </div>
             <div class="datos-precio-iconos">
-                <h1>{{instrumento.precio}} €</h1>
+                <h1>{{instrumento.precio | euros}}</h1>
                 <div class="iconos">
                     <i class="fa-regular fa-paste"></i>
-                    <i class="fa-regular fa-heart"></i>
+                    <i (click)="agregarAlCarrito(instrumento)" [ngClass]="{
+                        'fa-solid': instrumento.agregadoAlCarrito,
+                        'fa-regular': !instrumento.agregadoAlCarrito,
+                        'fa-heart': true
+                    }"></i>
                     <i class="fa-solid fa-cart-shopping"></i>
                 </div>
             </div>
