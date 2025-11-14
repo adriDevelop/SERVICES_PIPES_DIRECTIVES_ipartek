@@ -1,0 +1,39 @@
+<div class="container-instrumento">
+            <div class="container-imagen">
+                <img appImageDirective src="img/{{instrumento.urlImage}}">
+            </div>
+            <div class="datos-instrumentos">
+                <div class="descripcion">
+                    <div class="spans-container">
+                        <span class="fabricante">{{instrumento.fabricante}} </span><span class="modelo">{{instrumento.modelo}}</span>
+                    </div>
+                    <div class="contenedor-likes">
+
+                        <app-estrellas [numLikes]="instrumento.likes"></app-estrellas><span class="numero-likes">{{instrumento.likes}}</span>
+                    </div>
+
+                        <ul class="caracteristicas-principales">
+                            @for (descripcion of instrumento.descripcion; track $index){
+                                <li>{{descripcion}}</li>
+                            } 
+                        </ul>
+ 
+                </div>
+                <div class="stock">
+                    <h1 [ngClass] = "{
+                    'rojo': instrumento.stock <= 0,
+                    'amarillo': instrumento.stock == 3,
+                    'verde': instrumento.stock > 3
+                }">{{ instrumento.stock | stockPipe}}</h1>
+                </div>
+                
+            </div>
+            <div class="datos-precio-iconos">
+                <h1>{{instrumento.precio | euros}}</h1>
+                <div class="iconos">
+                    <i class="fa-regular fa-paste"></i>
+                    <app-corazon class="corazon" [instrumento]="instrumento"></app-corazon>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+            </div>
+    </div>

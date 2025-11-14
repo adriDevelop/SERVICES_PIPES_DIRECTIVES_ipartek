@@ -1,0 +1,10 @@
+i{
+    cursor: pointer;
+}
+i:hover{
+    color: purple;
+}
+
+i.fa-solid.fa-heart{
+    color: purple;
+}

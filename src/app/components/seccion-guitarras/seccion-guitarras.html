@@ -1,46 +1,12 @@
 <section class="guitarras">
+    <h1 class="title">Guitarras</h1>
     @for (instrumento of aGuitarras; track instrumento.id) {
-        <div class="container-instrumento">
-            <div class="container-imagen">
-                <img appImageDirective src="img/{{instrumento.urlImage}}">
-            </div>
-            <div class="datos-instrumentos">
-                <div class="descripcion">
-                    <div class="spans-container">
-                        <span class="fabricante">{{instrumento.fabricante}} </span><span class="modelo">{{instrumento.modelo}}</span>
-                    </div>
-                    <div class="contenedor-likes">
-                        <span class="numero-likes">{{instrumento.likes}}</span>
-                    </div>
-
-                        <ul class="caracteristicas-principales">
-                            @for (descripcion of instrumento.descripcion; track $index){
-                                <li>{{descripcion}}</li>
-                            } 
-                        </ul>
- 
-                </div>
-                <div class="stock">
-                    <h1 [ngClass] = "{
-                    'rojo': instrumento.stock <= 0,
-                    'amarillo': instrumento.stock == 3,
-                    'verde': instrumento.stock > 3
-                }">{{ instrumento.stock | stockPipe}}</h1>
-                </div>
-                
-            </div>
-            <div class="datos-precio-iconos">
-                <h1>{{instrumento.precio | euros}}</h1>
-                <div class="iconos">
-                    <i class="fa-regular fa-paste"></i>
-                    <i (click)="agregarAlCarrito(instrumento)" [ngClass]="{
-                        'fa-solid': instrumento.agregadoAlCarrito,
-                        'fa-regular': !instrumento.agregadoAlCarrito,
-                        'fa-heart': true
-                    }"></i>
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </div>
-            </div>
-    </div>
+        <app-ficha-instrumento [instrumento]="instrumento"></app-ficha-instrumento>
+    }
+</section>
+<section class="bajos">
+    <h1 class="title">Bajos</h1>
+    @for (instrumento of aBajos; track instrumento.id) {
+        <app-ficha-instrumento [instrumento]="instrumento"></app-ficha-instrumento>
     }
 </section>

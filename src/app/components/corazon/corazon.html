@@ -1,0 +1,8 @@
+<i
+  (click)="agregarAlCarrito(instrumento)"
+  [ngClass]="{
+    'fa-solid': instrumento.agregadoAlCarrito,
+    'fa-regular': !instrumento.agregadoAlCarrito,
+    'fa-heart': true
+  }"
+></i>
