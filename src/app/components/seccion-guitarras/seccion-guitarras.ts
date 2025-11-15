@@ -19,7 +19,7 @@ export class SeccionGuitarras {
     ];
 
     aBajos: Array<Instrumentos> = [
-        new Instrumentos(1,"Harley Benton","JB-20 SB Standard Series",2190,["Cuerpo de madera de álamo","TMástil atornillado de arce","Diapasón de laurel"],20,10,"bajo1.jpg", false)
+        new Instrumentos(1,"Harley Benton","JB-20 SB Standard Series",109,["Cuerpo de madera de álamo","TMástil atornillado de arce","Diapasón de laurel"],20,10,"bajo1.jpg", false)
     ]
 
 }
